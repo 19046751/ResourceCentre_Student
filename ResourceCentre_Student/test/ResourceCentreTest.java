@@ -116,7 +116,7 @@ public void addChromebookTest() {
   
     }
 	@Test
-	public void doLoanCamcorderTest() { //darilynn
+	public void doLoanCamcorderTest() { 
 		
 		assertNotNull("Test if there is an arraylist to loan", camcorderList);
 		ResourceCentre.addCamcorder(camcorderList, cc);
@@ -140,16 +140,19 @@ public void addChromebookTest() {
         ResourceCentre.addChromebook(chromebookList, cb1);
         assertEquals("Test if that Camcorder arraylist size is 2?", 2, chromebookList.size());
         
+        String testInput = "CC011";
+        String chromebookTag = chromebookList.get(0).getAssetTag();
+        
       //tests if isLoaned == true, will return false if isAvailable() == false
         boolean check = false; 
         check = ResourceCentre.doLoanChromebook(chromebookList, "CB0011", "21-7-20");
         assertTrue(check);	
-        
+        String testOutput = ResourceCentre.retrieveAllChromebook(chromebookList);
 
 	}
 	
 	@Test
-	public void doReturnCamcorderTest() { //darilynn
+	public void doReturnCamcorderTest() { 
 		
 		doLoanCamcorderTest();
 		boolean returned = false;
