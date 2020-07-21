@@ -143,11 +143,15 @@ public class ResourceCentre {
 		System.out.println(output);
 	}
 
-	public static String retrieveAllChromebook(ArrayList<Chromebook> chromebookList) {
-		String output = "";
-		// write your code here
-		return output;
-	}
+	   public static String retrieveAllChromebook(ArrayList<Chromebook> chromebookList) {
+	        String output = "";
+	        for (Chromebook cb : chromebookList) {
+	            output += String.format("%-10s %-30s %-10s %-10s %-20s\n", cb.getAssetTag(),cb.getDescription(),ResourceCentre.showAvailability(cb.getIsAvailable())
+	                    , cb.getDueDate(), cb.getOs());
+	            
+	        }
+			return output;
+	   }
 	public static void viewAllChromebook(ArrayList<Chromebook> chromebookList) {
 		
 		String output = retrieveAllChromebook(chromebookList);
@@ -172,12 +176,15 @@ public class ResourceCentre {
 	
 	public static Chromebook inputChromebook() {	
 		Chromebook cb =null;
-		// write your code here
+		
+		
 		return cb;
 		
 	}	
 	public static void addChromebook(ArrayList<Chromebook> chromebookList, Chromebook cb) {
 		// write your code here
+		chromebookList.add(cb);
+		System.out.println("Chromebook added");
 	}
 	
 	//================================= Option 3 Loan =================================
