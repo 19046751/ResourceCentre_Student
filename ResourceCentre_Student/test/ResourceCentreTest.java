@@ -117,28 +117,61 @@ public void addChromebookTest() {
     }
 	@Test
 	public void doLoanCamcorderTest() { //darilynn
-		//fail("Not yet implemented");
-		// write your code here
-		assertNotNull("Check if there is an arraylist to loan", camcorderList);
-	}
+		
+		assertNotNull("Test if there is valid Camcorder arraylist to add to", camcorderList);
+		ResourceCentre.addCamcorder(camcorderList, cc);
+		ResourceCentre.addCamcorder(camcorderList, cc1);
+		assertEquals("Test if that Camcorder arraylist size is 2?", 2, camcorderList.size());
+		
+		boolean check = false;
+		check = ResourceCentre.doLoanCamcorder(camcorderList, "CC0011", "21-7-20");
+		//tests if isLoaned == true, will return false if isAvailable() == false
+		assertTrue("If isLoaned boolean is true and isAvailable boolean is false, returns true", check);
+
+		
+	}	
 	
 	@Test
 	public void doLoanChromebookTest() { //darilynn
-		//fail("Not yet implemented");
-		// write your code here
-		assertNotNull("Check if there is an arraylist to loan ", chromebookList);
+		
+		assertNotNull("Test if there is valid Chromebook arraylist to add to", chromebookList);
+        //Given an empty list, after adding 2 items, test if the size of the list is 2
+        ResourceCentre.addChromebook(chromebookList, cb);
+        ResourceCentre.addChromebook(chromebookList, cb1);
+        assertEquals("Test if that Camcorder arraylist size is 2?", 2, chromebookList.size());
+        
+      //tests if isLoaned == true, will return false if isAvailable() == false
+        boolean check = false; 
+        check = ResourceCentre.doLoanChromebook(chromebookList, "CB0011", "21-7-20");
+        assertTrue(check);	
+        
+
 	}
 	
 	@Test
-	public void doReturnCamcorderTest() {
-		//fail("Not yet implemented");
-		// write your code here
+	public void doReturnCamcorderTest() { //darilynn
+		//tag CC0011
+		doLoanCamcorderTest();
+		boolean returned = false;
+		returned = ResourceCentre.doReturnCamcorder(camcorderList, "CC0011");
+		
+		//checks if it's being returned by checking if boolean is true
+		assertTrue("checks if its returned, if its true its returned", returned);
+		
 		
 	}
 	@Test
-	public void doReturnChromebookTest() {
-		//fail("Not yet implemented");
-		// write your code here
+	public void doReturnChromebookTest() { //darilynn
+		//loaning
+		//tag CB0011
+		
+		assertNotNull("Test if there is valid Chromebook arraylist to",chromebookList);
+		ResourceCentre.addChromebook(chromebookList, cb1);
+		
+		//Error Occurs
+		Boolean isReturned = ResourceCentre.doReturnChromebook(chromebookList, "CB0011");
+		assertFalse("Test if available chromebook CC0011 is returned -false" , isReturned);
+		
 	}
 	
 	@After
