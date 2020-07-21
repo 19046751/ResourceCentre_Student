@@ -119,7 +119,7 @@ public void addChromebookTest() {
 	public void doLoanCamcorderTest() {
 		//fail("Not yet implemented");
 		// write your code here
-		
+		assertNotNull("Check if there is an arralylist to loan", camcorderList);
 	}
 	
 	@Test
