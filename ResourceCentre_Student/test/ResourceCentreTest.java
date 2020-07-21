@@ -90,6 +90,7 @@ public void addChromebookTest() {
 		assertEquals("Check that ViewAllCamcorderlist", testOutput, allCamcorder);
 		
 	}
+	
 	@Test
 	public void retrieveAllChromebookTest() {
         //checks if itemlist is not null, but is empty instead
