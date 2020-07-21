@@ -233,6 +233,7 @@ public class ResourceCentre {
 		return isLoaned;
 	}
 	public static void loanChromebook(ArrayList<Chromebook> chromebookList) {
+
 		
 		ResourceCentre.viewAllChromebook(chromebookList);
 		String tag = Helper.readString("Enter asset tag > ");
@@ -244,6 +245,8 @@ public class ResourceCentre {
 			System.out.println("Camcorder " + tag + " loaned out");
 		}
 			
+
+
 	}
 	
 	//================================= Option 4 Return =================================
@@ -298,10 +301,8 @@ public class ResourceCentre {
 			System.out.println("Chromebook " + tag + " returned");
 		}
 	}
+}
 		
-		// write your code here
-		// write your code here
-	}
 
 
 

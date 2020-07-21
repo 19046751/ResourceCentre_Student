@@ -144,7 +144,7 @@ public void addChromebookTest() {
       //tests if isLoaned == true, will return false if isAvailable() == false
         boolean check = false; 
         check = ResourceCentre.doLoanChromebook(chromebookList, "CB0011", "21-7-20");
-        assertTrue(check);
+        assertTrue(check);	
         
 
 	}
