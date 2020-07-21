@@ -239,7 +239,7 @@ public class ResourceCentre {
 			System.out.println("Invalid asset tag");
 		} else {
 			System.out.println("Chromebook " + tag + " loaned out");
-		
+		}
 		
 	}
 	
