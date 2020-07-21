@@ -118,10 +118,10 @@ public void addChromebookTest() {
 	@Test
 	public void doLoanCamcorderTest() { //darilynn
 		
-		assertNotNull("Test if there is valid Camcorder arraylist to add to", camcorderList);
+		assertNotNull("Test if there is an arraylist to loan", camcorderList);
 		ResourceCentre.addCamcorder(camcorderList, cc);
 		ResourceCentre.addCamcorder(camcorderList, cc1);
-		assertEquals("Test if that Camcorder arraylist size is 2?", 2, camcorderList.size());
+		assertEquals("Test if that Camcorder item is in list?", 2, camcorderList.size());
 		
 		boolean check = false;
 		check = ResourceCentre.doLoanCamcorder(camcorderList, "CC0011", "21-7-20");
@@ -134,7 +134,7 @@ public void addChromebookTest() {
 	@Test
 	public void doLoanChromebookTest() { //darilynn
 		
-		assertNotNull("Test if there is valid Chromebook arraylist to add to", chromebookList);
+		assertNotNull("Test if there is an arraylist to loan", chromebookList);
         //Given an empty list, after adding 2 items, test if the size of the list is 2
         ResourceCentre.addChromebook(chromebookList, cb);
         ResourceCentre.addChromebook(chromebookList, cb1);
@@ -150,7 +150,7 @@ public void addChromebookTest() {
 	
 	@Test
 	public void doReturnCamcorderTest() { //darilynn
-		//tag CC0011
+		
 		doLoanCamcorderTest();
 		boolean returned = false;
 		returned = ResourceCentre.doReturnCamcorder(camcorderList, "CC0011");
@@ -162,8 +162,6 @@ public void addChromebookTest() {
 	}
 	@Test
 	public void doReturnChromebookTest() { //darilynn
-		//loaning
-		//tag CB0011
 		
 		assertNotNull("Test if there is valid Chromebook arraylist to",chromebookList);
 		ResourceCentre.addChromebook(chromebookList, cb1);
