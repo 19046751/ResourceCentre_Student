@@ -126,7 +126,7 @@ public void addChromebookTest() {
 	public void doLoanChromebookTest() { //darilynn
 		//fail("Not yet implemented");
 		// write your code here
-		assertNotNull("Check if there is an arraylist to loan", chromebookList);
+		assertNotNull("Check if there is an arraylist to loan ", chromebookList);
 	}
 	
 	@Test
